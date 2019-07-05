@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\borsh\GameManager.cs" />
     <Compile Include="Assets\Scripts\borsh\Heart.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\CameraController.cs" />
+    <Compile Include="Assets\Scripts\LywockeeZ\MovementController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/TeamSovietCGJ2019/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
