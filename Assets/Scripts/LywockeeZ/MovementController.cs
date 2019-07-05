@@ -68,4 +68,9 @@ public class MovementController : MonoBehaviour
             //direction = Vector3.zero;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(transform.position, transform.right);
+    }
 }
