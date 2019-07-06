@@ -8,11 +8,17 @@ public class Heart : MonoBehaviour
     private float rotatespeed;
     private float rotatetime = 0;
     float rotateangle = 0;
+    private GameObject go;
     // Start is called before the first frame update
     void Start()
     {
-        movespeed=0.5f;
+        movespeed=GameManager.gameManager.movespeed;
         rotatespeed = 4f;
+        go= Instantiate(transform.gameObject, transform.position, Quaternion.identity);
+        go.GetComponent<Heart>().enabled = false;
+        go.GetComponent<CircleCollider2D>().enabled = false;
+        go.GetComponent<SpriteRenderer>().enabled = true;
+        //go.transform.parent = this.transform;
     }
 
     // Update is called once per frame
@@ -20,14 +26,13 @@ public class Heart : MonoBehaviour
     {        
         transform.Translate(Vector3.right * movespeed * Time.deltaTime);
         randomrotate();
+        go.transform.position = transform.position;
     }
 
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
         if (collision.transform.tag == "wall")
-        {           
+        {
             float angle;
             if (collision.transform.name == "rightwall")
             {
@@ -35,9 +40,9 @@ public class Heart : MonoBehaviour
                 transform.Rotate(Vector3.forward, 2 * angle);
             }
             else if (collision.transform.name == "leftwall")
-            {             
+            {
                 angle = Vector3.Angle(transform.right, collision.transform.up);
-                transform.Rotate(Vector3.forward, - 2 * angle);
+                transform.Rotate(Vector3.forward, -2 * angle);
             }
             else if (collision.transform.name == "upwall")
             {
@@ -52,6 +57,7 @@ public class Heart : MonoBehaviour
         }
     }
 
+
     private void randomrotate()
     {
         rotatetime += Time.deltaTime;       
@@ -64,4 +70,6 @@ public class Heart : MonoBehaviour
         rotation.z += rotateangle;
         transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, rotation, rotatespeed * Time.deltaTime);
     }
+
+
 }

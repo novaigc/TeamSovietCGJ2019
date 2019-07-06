@@ -62,10 +62,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Scripts\borsh\CanvasControl.cs" />
     <Compile Include="Assets\Scripts\borsh\GameManager.cs" />
     <Compile Include="Assets\Scripts\borsh\Heart.cs" />
+    <Compile Include="Assets\Scripts\borsh\myCamera.cs" />
+    <Compile Include="Assets\Scripts\borsh\TitleManager.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\CameraController.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\MovementController.cs" />
+    <None Include="Assets\Demigiant\DOTween\readme.txt" />
+    <None Include="Assets\Scripts\borsh\blackwhite.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/TeamSovietCGJ2019/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -278,6 +290,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>E:/TeamSovietCGJ2019/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>E:/TeamSovietCGJ2019/Assets/Plugins/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>F:/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
