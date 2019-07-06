@@ -36,8 +36,8 @@ public class myCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(edgeonly>0)
-        //edgeonly -= 0.5f*Time.deltaTime;             
+        if (edgeonly > 0)
+            edgeonly = GameManager.gameManager.edgeonly;           
     }
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {

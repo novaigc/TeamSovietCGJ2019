@@ -28,13 +28,13 @@ public class TitleManager : MonoBehaviour
         {
             canvasGroup.alpha -= fadespeed * Time.deltaTime;
             if (canvasGroup.alpha <= 0.25)
-                keyisfade = false;
+                keyisfade = true;
         }
         else
         {
             canvasGroup.alpha += fadespeed * Time.deltaTime;
             if (canvasGroup.alpha >= 0.9)
-                keyisfade = true;
+                keyisfade = false;
         }
     }
 }
