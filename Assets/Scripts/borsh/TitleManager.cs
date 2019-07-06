@@ -13,12 +13,13 @@ public class TitleManager : MonoBehaviour
     {
         presskey = GameObject.Find("press any key");
         keyisfade = false;
-        fadespeed = 1.0f;
+        fadespeed = 0.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        GameStart();
         pressanykey();
     }
     void pressanykey()
@@ -35,6 +36,15 @@ public class TitleManager : MonoBehaviour
             canvasGroup.alpha += fadespeed * Time.deltaTime;
             if (canvasGroup.alpha >= 0.9)
                 keyisfade = false;
+        }
+    }
+
+    void GameStart()
+    {
+        if (Input.anyKeyDown)
+        {
+            SceneChanger.Instance.FadeToNextScene();
+            GameManager.gameManager.isEnd = false;
         }
     }
 }
