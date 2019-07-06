@@ -1075,6 +1075,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Misc Blood B 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3526229311286885304, guid: d093eb5d1903f5b47a81ee467fd5847b,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526229311286885304, guid: d093eb5d1903f5b47a81ee467fd5847b,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1320868861166741042, guid: d093eb5d1903f5b47a81ee467fd5847b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1170,16 +1180,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -10
       objectReference: {fileID: 0}
-    - target: {fileID: 3526229311286885304, guid: d093eb5d1903f5b47a81ee467fd5847b,
-        type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3526229311286885304, guid: d093eb5d1903f5b47a81ee467fd5847b,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d093eb5d1903f5b47a81ee467fd5847b, type: 3}
 --- !u!1 &1099699264
@@ -1215,7 +1215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85.2, y: 58.5}
+  m_AnchoredPosition: {x: -98.9, y: 58.5}
   m_SizeDelta: {x: 135, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1099699266
