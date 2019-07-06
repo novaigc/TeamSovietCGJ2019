@@ -26,6 +26,6 @@ public class EndManager : MonoBehaviour
     public void retry()
     {
         GameManager.gameManager.score = 0;
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("LywockeezTest");
     }
 }

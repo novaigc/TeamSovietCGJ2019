@@ -24,7 +24,6 @@ public class GameManager {
     public int waves = 0;
     public int score = 100;
     public List<GameObject> hearts = new List<GameObject>();
-    public bool isEnd = true;
     public int baseMount = 20;
 
     public void placeorder(int score)
@@ -75,7 +74,5 @@ public class GameManager {
         movespeed = 1f;
         iseattriangle = false;
         baseMount = 20;
-        isEnd = true;
-        SceneManager.LoadScene("end");
     }
 }
