@@ -21,6 +21,7 @@ public class Damage : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerStats.Instance.TakeDamage(0.5f);
+            Destroy(this.gameObject);
         }
     }
 }

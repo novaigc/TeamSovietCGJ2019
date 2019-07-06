@@ -35,7 +35,11 @@ public class SpawnerManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (heartCount == GameManager.gameManager.baseMount)
+        {
+            StopAllCoroutines();
+            heartCount = 0;
+        }
     }
 
     IEnumerator RandomOpen()
@@ -43,6 +47,11 @@ public class SpawnerManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         spawners[Random.Range(0, spawners.Count - 1)].isActive = true;
         heartCount++;
+        StartCoroutine(RandomOpen());
+    }
+
+    public void StartGenerate()
+    {
         StartCoroutine(RandomOpen());
     }
 }

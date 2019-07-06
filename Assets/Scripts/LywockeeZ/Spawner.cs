@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator Generator()
     {
-        Instantiate(items[Random.Range(0,items.Length -1)], transform.position , Quaternion.Euler(0, 0, Random.Range(0,angleRange)));
+        Instantiate(items[Random.Range(0,items.Length)], transform.position , Quaternion.Euler(0, 0, Random.Range(0,angleRange)));
         isActive = false;
         yield return null;
     }

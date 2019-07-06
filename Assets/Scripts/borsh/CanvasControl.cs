@@ -23,10 +23,14 @@ public class CanvasControl : MonoBehaviour
     }
     public void nextwave()
     {
+        
         if (GameManager.gameManager.hearts.Count == 0)
         {
+            Debug.Log("ok");
+            GameManager.gameManager.baseMount += 17;
             GameManager.gameManager.waves++;
             GameManager.gameManager.movespeed += 1;
+            SpawnerManager.Instance.StartGenerate();
         }
     }
     public void scoreup()

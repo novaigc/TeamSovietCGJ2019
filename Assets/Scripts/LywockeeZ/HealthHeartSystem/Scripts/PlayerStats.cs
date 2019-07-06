@@ -3,6 +3,8 @@
  */
 
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -32,6 +34,15 @@ public class PlayerStats : MonoBehaviour
     public float Health { get { return health; } }
     public float MaxHealth { get { return maxHealth; } }
     public float MaxTotalHealth { get { return maxTotalHealth; } }
+
+    private void Update()
+    {
+        if (Health == 0)
+        {
+            Debug.Log("End");
+            GameManager.gameManager.endgame();
+        }
+    }
 
     public void Heal(float health)
     {

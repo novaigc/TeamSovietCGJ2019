@@ -22,7 +22,8 @@ public class GameManager {
     public int[] order = new int[10];
     public int waves = 0;
     public int score = 100;
-    public List<GameObject> hearts=new List<GameObject>();
+    public List<GameObject> hearts = new List<GameObject>();
+    public int baseMount = 20;
 
     public void placeorder(int score)
     {
@@ -71,5 +72,6 @@ public class GameManager {
         waves = 0;
         movespeed = 1f;
         iseattriangle = false;
+        baseMount = 20;
     }
 }
