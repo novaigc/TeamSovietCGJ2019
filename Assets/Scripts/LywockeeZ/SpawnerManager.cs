@@ -6,6 +6,7 @@ public class SpawnerManager : MonoBehaviour
 {
     public List<Spawner> spawners = new List<Spawner>();
     public float delay = 1f;
+    public int heartCount = 0;
 
     protected static SpawnerManager _instance;
     public static SpawnerManager Instance
@@ -41,6 +42,7 @@ public class SpawnerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         spawners[Random.Range(0, spawners.Count - 1)].isActive = true;
+        heartCount++;
         StartCoroutine(RandomOpen());
     }
 }
