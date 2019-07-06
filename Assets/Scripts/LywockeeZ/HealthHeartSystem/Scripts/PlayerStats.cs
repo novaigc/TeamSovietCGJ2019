@@ -37,17 +37,19 @@ public class PlayerStats : MonoBehaviour
     public Animator animator;
     public bool isDeath = false;
     public ParticleSystem brust;
+    public Canvas Canvas;
 
     private void Update()
     {
-        if (Health == 0 && GameManager.gameManager.isEnd == false)
+        if (Health == 0 && GameManager.gameManager.isEnd == false && isDeath == false)
         {
             isDeath = true;
             animator.SetTrigger("Death");
             animator.transform.parent.GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine(CameraMove());
             Debug.Log("End");
-            GameManager.gameManager.endgame();
+            Canvas.enabled = false;
+            
         }
     }
 
@@ -87,5 +89,7 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         CameraController.Instance.startMove = true;
+        yield return new WaitForSeconds(2f);
+        GameManager.gameManager.endgame();
     }
 }

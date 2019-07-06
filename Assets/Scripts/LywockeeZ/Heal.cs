@@ -20,7 +20,8 @@ public class Heal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-
+            PlayerStats.Instance.Heal(1f);
+            Destroy(this.gameObject);
         }
     }
 }

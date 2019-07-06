@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
         thingsToAttack = Physics2D.OverlapCircleAll(attackPos.position, attackRange, 1 << LayerMask.NameToLayer("heart"));
         if (timeBtwAttack <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && PlayerStats.Instance.isDeath == false)
             {
                 
                 StartCoroutine(StartCutting());

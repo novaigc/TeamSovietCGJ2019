@@ -74,8 +74,8 @@ public class SpawnerManager : MonoBehaviour
         {
             gameLevel = 1;
             spawnerCount = 4;
-            delay = 2f;
-            GameManager.gameManager.movespeed = 1.5f;
+            delay = 1.5f;
+            GameManager.gameManager.movespeed = 1.2f;
         }
 
         if (increaseSpeed >= 2 && increaseSpeed < 3)

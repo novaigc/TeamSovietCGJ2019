@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 433681445433495772}
   - component: {fileID: 8570045064650352319}
   - component: {fileID: 2937026841007056045}
-  - component: {fileID: 5996699254872292853}
+  - component: {fileID: 7091043617964271903}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d87ced9f39475554c8b723164a825ef6, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 7c70b040a17a49e488c2ae9bbfea6807, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb23e6a7ebbe6147bd3783cc359908e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  go: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!50 &2937026841007056045
 Rigidbody2D:
   serializedVersion: 4
@@ -132,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5996699254872292853
+--- !u!114 &7091043617964271903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 464779163667812299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5fcfff0e42b7a54ba38a8d3b81d2aa4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6faecedf38dff5a4f93388a175503c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5243479297502486931
@@ -154,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4811504943410104927}
   m_Layer: 0
-  m_Name: WeaponUp
+  m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
