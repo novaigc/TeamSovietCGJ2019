@@ -27,10 +27,18 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         if (!isCutting)
-        {
+        {           
             Move2();
         }
-        
+        if (transform.position.x >= 8)
+            transform.position = new Vector3(8, transform.position.y, 0);
+        if (transform.position.x <= -8.5)
+            transform.position = new Vector3(-8.5f, transform.position.y, 0);
+        if (transform.position.y <= -3)
+            transform.position = new Vector3(transform.position.x,-3, 0);
+        if (transform.position.y >= 3)
+            transform.position = new Vector3(transform.position.x,3, 0);
+
         //Rotate();
     }
 

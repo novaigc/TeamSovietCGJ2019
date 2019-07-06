@@ -33,6 +33,8 @@ public class Heart : MonoBehaviour
         if(GameManager.gameManager.waves>=4)
              randomrotate();
         go.transform.position = transform.position;
+        if (transform.position.x >= 10 || transform.position.x <= -9 || transform.position.y <= -4 || transform.position.y >= 7)
+            Destroy(this.gameObject);
     }
 
 
