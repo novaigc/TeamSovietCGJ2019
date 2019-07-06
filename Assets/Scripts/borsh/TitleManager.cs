@@ -8,9 +8,16 @@ public class TitleManager : MonoBehaviour
     private GameObject presskey;
     private bool keyisfade;
     private float fadespeed;
+    private bool isplayed = false;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = Resources.Load(@"Audios\TITLE1") as AudioClip;
+        audioSource.loop = false;
+        audioSource.Play();
+        Debug.Log(audioSource.clip);
         presskey = GameObject.Find("press any key");
         keyisfade = false;
         fadespeed = 0.5f;
@@ -21,6 +28,13 @@ public class TitleManager : MonoBehaviour
     {
         GameStart();
         pressanykey();
+        if(!audioSource.isPlaying&&isplayed==false)
+        {
+            audioSource.clip= Resources.Load(@"Audios\TITLE2") as AudioClip;
+            audioSource.loop = true;
+            audioSource.Play();
+            isplayed = true;
+        }
     }
     void pressanykey()
     {
@@ -46,5 +60,11 @@ public class TitleManager : MonoBehaviour
             SceneChanger.Instance.FadeToNextScene();
             GameManager.gameManager.isEnd = false;
         }
+    }
+    public void start()
+    {
+
+        SceneChanger.Instance.FadeToNextScene();
+        GameManager.gameManager.isEnd = false;
     }
 }

@@ -8,11 +8,14 @@ public class CanvasControl : MonoBehaviour
 {
     private GameObject redimage;
     private GameObject score;
+    private GameObject intro;
 
    // private GameObject waveamount;
     // Start is called before the first frame update
     void Start()
     {
+        intro = transform.Find("intro").gameObject;
+        StartCoroutine(showintro());      
         score = GameObject.Find("score");
         redimage = transform.Find("redimage").gameObject;
        // waveamount = GameObject.Find("waveamount");
@@ -48,5 +51,10 @@ public class CanvasControl : MonoBehaviour
     {
         Tweener tw = redimage.GetComponent<Image>().DOFade(0.5f, 0.1f);
         tw.OnComplete(delegate { redimage.GetComponent<Image>().DOFade(0f, 0.3f); });
+    }
+    IEnumerator showintro()
+    {
+        yield return new WaitForSeconds(2f);
+        intro.GetComponent<Image>().DOFade(0, 1f);
     }
 }

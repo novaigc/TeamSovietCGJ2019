@@ -26,7 +26,7 @@ public class Damage : MonoBehaviour
             PlayerStats.Instance.TakeDamage(1f);
             GameManager.gameManager.edgeonly -= 0.1f;
             Destroy(this.gameObject);
-            GameObject.Find("Canvas").GetComponent<CanvasControl>().hurtshine();
+            GameObject.Find("Canvasone").GetComponent<CanvasControl>().hurtshine();
             Tweener tw= GameObject.Find("Cube").transform.Find("Sprites").GetComponent<SpriteRenderer>().DOFade(0.1f, 0.05f);
             tw.OnComplete(delegate { GameObject.Find("Cube").transform.Find("Sprites").GetComponent<SpriteRenderer>().DOFade(1f, 0.3f); });            
         }
