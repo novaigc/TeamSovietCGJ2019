@@ -6,7 +6,6 @@ public class MovementController : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public float rotateSpeed = 1f;
-    public Animator animator;
     private Vector3 direction;
     private Vector3 moveDirection;
     // Start is called before the first frame update
@@ -20,7 +19,6 @@ public class MovementController : MonoBehaviour
     {
         Move();
         Rotate();
-        Cut();
     }
 
     public void Move()
@@ -73,13 +71,6 @@ public class MovementController : MonoBehaviour
         //}
     }
 
-    public void Cut()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetTrigger("Cut");
-        }
-    }
 
     private void OnDrawGizmos()
     {

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\LywockeeZ\Damage.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\Heal.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\MovementController.cs" />
+    <Compile Include="Assets\Scripts\LywockeeZ\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\Spawner.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/Unity/Projects/TeamSovietCGJ2019/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
