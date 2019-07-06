@@ -72,8 +72,10 @@ public class PlayerAttack : MonoBehaviour
     }
     IEnumerator distroyheart(Collider2D heart)
     {
-        heart.transform.GetComponent<Heart>().animator.SetTrigger("StartBreak");
-        yield return new WaitForSeconds(3f);
+        heart.transform.GetComponent<Heart>().go.transform.GetComponent<Animator>().SetTrigger("StartBreak");
+        heart.transform.GetComponent<CircleCollider2D>().enabled = false;
+        heart.transform.GetComponent<Heart>().go.transform.GetComponent<CircleCollider2D>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
         Destroy(heart.transform.parent.gameObject);
         GameManager.gameManager.score += 100;
     }

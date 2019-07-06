@@ -13,8 +13,7 @@ public class EndManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tip = GameObject.Find("tip");
-        tip.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 1.5f);
+        tip = transform.Find("tip").gameObject;     
         GameManager.gameManager.loadorder();
         for (int i=1;i<=5;i++)
         {
@@ -22,11 +21,10 @@ public class EndManager : MonoBehaviour
         }
         score = GameObject.Find("score");
         score.GetComponent<Text>().text = "得分：" + GameManager.gameManager.score.ToString("00000");
-       // if(GameManager.gameManager.score > GameManager.gameManager.order[0])
-       // {
-        //    tip.SetActive(true);
-        //    tip.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(0.5f, 0.5f, 0.5f), 1.5f);
-       // }
+        if(GameManager.gameManager.score >= GameManager.gameManager.order[0])
+        {
+            StartCoroutine(showtip());
+        }
     }
 
     // Update is called once per frame
@@ -37,11 +35,16 @@ public class EndManager : MonoBehaviour
             retry();
         }
     }
-
     public void retry()
     {
         GameManager.gameManager.score = 0;
         SceneChanger.Instance.FadeToScene(1);
         GameManager.gameManager.isEnd = false;
+    }
+    IEnumerator showtip()
+    {
+        yield return new WaitForSeconds(0.5f);
+        tip.SetActive(true);
+        tip.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 1f);
     }
 }

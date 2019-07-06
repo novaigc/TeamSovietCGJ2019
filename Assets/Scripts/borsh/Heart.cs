@@ -8,7 +8,7 @@ public class Heart : MonoBehaviour
     private float rotatespeed;
     private float rotatetime = 0;
     float rotateangle = 0;
-    private GameObject go;
+    public GameObject go;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
