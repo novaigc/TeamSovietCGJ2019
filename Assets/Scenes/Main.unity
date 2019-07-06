@@ -219,7 +219,6 @@ Transform:
   m_Father: {fileID: 1843466185}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &71429284
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,14 +293,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71429284}
   m_CullTransparentMesh: 0
-=======
 --- !u!4 &74091877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1320868861166741042, guid: d093eb5d1903f5b47a81ee467fd5847b,
     type: 3}
   m_PrefabInstance: {fileID: 1057113725}
   m_PrefabAsset: {fileID: 0}
->>>>>>> e368fe04c21cac236cede14f7cd92e69f5154435
 --- !u!1 &162825394
 GameObject:
   m_ObjectHideFlags: 0
