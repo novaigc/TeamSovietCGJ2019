@@ -12,6 +12,7 @@ public class Heart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.gameManager.hearts.Add(this.gameObject);
         transform.GetComponent<CircleCollider2D>().enabled = false;
         Invoke("enablecollsion", 1.5f);
         movespeed =GameManager.gameManager.movespeed;
@@ -83,6 +84,7 @@ public class Heart : MonoBehaviour
     }
     private void OnDestroy()
     {
+        GameManager.gameManager.hearts.Remove(this.gameObject);
         Destroy(go);
     }
 

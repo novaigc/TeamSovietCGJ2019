@@ -11,25 +11,30 @@ public class CanvasControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = GameObject.Find("score");
+        waveamount = GameObject.Find("waveamount");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        scoreup();
+        showwave();
     }
     public void nextwave()
     {
-        GameManager.gameManager.waves++;
-        GameManager.gameManager.movespeed += 1;
+        if (GameManager.gameManager.hearts.Count == 0)
+        {
+            GameManager.gameManager.waves++;
+            GameManager.gameManager.movespeed += 1;
+        }
     }
     public void scoreup()
     {
-        score.GetComponent<Text>().text = GameManager.gameManager.score.ToString();
+        score.GetComponent<Text>().text = GameManager.gameManager.score.ToString("00000");
     }
     public void showwave()
     {
-        waveamount.GetComponent<Text>().text = "当前第" + GameManager.gameManager.waves.ToString() + "波";
+        waveamount.GetComponent<Text>().text = "当前第" + GameManager.gameManager.waves.ToString("00") + "波";
     }
 }
