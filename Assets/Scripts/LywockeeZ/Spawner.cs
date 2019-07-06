@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public bool isActive = false;
-    public float delay = 0f;
+    public float delay = 1f;
     public GameObject heart;
 
     void Start()
@@ -18,7 +18,8 @@ public class Spawner : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (isActive)
         {
-            Instantiate(heart, transform.position , Quaternion.identity);
+            Instantiate(heart, transform.position , Quaternion.Euler(0, 0, Random.Range(0,180)));
         }
+        StartCoroutine(Generator());
     }
 }

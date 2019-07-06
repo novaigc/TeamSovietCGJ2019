@@ -6,6 +6,7 @@ public class MovementController : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public float rotateSpeed = 1f;
+    public Animator animator;
     private Vector3 direction;
     private Vector3 moveDirection;
     // Start is called before the first frame update
@@ -19,58 +20,69 @@ public class MovementController : MonoBehaviour
     {
         Move();
         Rotate();
+        Cut();
     }
 
     public void Move()
     {
-        Vector3 anyKeyDown = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
-        transform.position += transform.right * Time.deltaTime * moveSpeed * anyKeyDown.magnitude;
+        Vector3 anyKeyDown = new Vector3(Input.GetAxis("Vertical"), 0, 0);
+        transform.position += transform.up * Time.deltaTime * moveSpeed * anyKeyDown.magnitude;
     }
 
 
 
     public void Rotate()
     {
-        if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") > 0)
+        float roll = Input.GetAxis("Horizontal") * Time.deltaTime * rotateSpeed;
+        transform.Rotate(0 , 0 , -roll);     
+        //if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") > 0)
+        //{
+        //    transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 45), rotateSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") < 0)
+        //{
+        //    transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, -45), rotateSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") > 0)
+        //{
+        //    transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 135), rotateSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") < 0)
+        //{
+        //    transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, -135), rotateSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") > 0)
+        //{
+        //    transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 90), rotateSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") < 0)
+        //{
+        //    transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, -90), rotateSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") == 0)
+        //{
+        //    transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 0), rotateSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") == 0)
+        //{
+        //    transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 180), rotateSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+        //{
+        //    //direction = Vector3.zero;
+        //}
+    }
+
+    public void Cut()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 45), rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") < 0)
-        {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, -45), rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") > 0)
-        {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 135), rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") < 0)
-        {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, -135), rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") > 0)
-        {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 90), rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") < 0)
-        {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, -90), rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") == 0)
-        {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 0), rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") == 0)
-        {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 180), rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
-        {
-            //direction = Vector3.zero;
+            animator.SetTrigger("Cut");
         }
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(transform.position, transform.right);
+        Gizmos.DrawRay(transform.position, transform.up);
     }
 }
