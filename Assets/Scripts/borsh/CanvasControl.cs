@@ -46,7 +46,7 @@ public class CanvasControl : MonoBehaviour
    // }
    public void hurtshine()
     {
-        Tweener tw = redimage.GetComponent<Image>().DOFade(0.5f, 0.3f);
+        Tweener tw = redimage.GetComponent<Image>().DOFade(0.5f, 0.1f);
         tw.OnComplete(delegate { redimage.GetComponent<Image>().DOFade(0f, 0.3f); });
     }
 }
