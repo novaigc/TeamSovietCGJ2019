@@ -13,30 +13,27 @@ public class Heart : MonoBehaviour
     void Start()
     {
         GameManager.gameManager.hearts.Add(this.gameObject);
-        transform.GetComponent<CircleCollider2D>().enabled = false;
-        Invoke("enablecollsion", 1.5f);
+        //transform.GetComponent<CircleCollider2D>().enabled = false;
+        //Invoke("enablecollsion", 1.5f);
         movespeed =GameManager.gameManager.movespeed;
         rotatespeed = 4f;
         go= Instantiate(transform.gameObject, transform.position, Quaternion.identity);
         go.GetComponent<Heart>().enabled = false;
         go.GetComponent<CircleCollider2D>().enabled = false;
         go.GetComponent<SpriteRenderer>().enabled = true;
-        //go.transform.parent = this.transform;
+        //go.transform.parent = this.transform;        
     }
 
     // Update is called once per frame
     void Update()
-    {        
-        transform.Translate(Vector3.right * movespeed * Time.deltaTime);
+    {
+        transform.Translate(Vector3.right * movespeed * Time.deltaTime);      
         if(GameManager.gameManager.waves>=4)
              randomrotate();
         go.transform.position = transform.position;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-       
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "wall")
@@ -75,7 +72,7 @@ public class Heart : MonoBehaviour
         }
         Vector3 rotation = transform.eulerAngles;
         rotation.z += rotateangle;
-        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, rotation, rotatespeed * Time.deltaTime);
+        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, rotation, rotatespeed * Time.deltaTime);       
     }
 
     private void enablecollsion()

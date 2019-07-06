@@ -3,18 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class EndManager : MonoBehaviour
 {
     private GameObject[] orders = new GameObject[5];
+    private GameObject score;
+    private GameObject tip;
     // Start is called before the first frame update
     void Start()
     {
+        tip = GameObject.Find("tip");
+        tip.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 1.5f);
         GameManager.gameManager.loadorder();
         for (int i=1;i<=5;i++)
         {
             GameObject.Find("order" + i.ToString()).GetComponent<Text>().text = GameManager.gameManager.order[i - 1].ToString("00000");
-        }      
+        }
+        score = GameObject.Find("score");
+        score.GetComponent<Text>().text = "得分：" + GameManager.gameManager.score.ToString("00000");
+       // if(GameManager.gameManager.score > GameManager.gameManager.order[0])
+       // {
+        //    tip.SetActive(true);
+        //    tip.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(0.5f, 0.5f, 0.5f), 1.5f);
+       // }
     }
 
     // Update is called once per frame

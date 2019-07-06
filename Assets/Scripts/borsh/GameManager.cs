@@ -68,6 +68,7 @@ public class GameManager {
     }
     public void endgame()
     {
+        loadorder();
         placeorder(score);
         saveorder();
         waves = 0;
