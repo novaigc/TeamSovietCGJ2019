@@ -21,7 +21,7 @@ public class GameManager {
     public bool iseattriangle = false;
     public int[] order = new int[10];
     public int waves = 0;
-    private int score = 0;
+    public int score = 0;
 
     public void placeorder(int score)
     {
