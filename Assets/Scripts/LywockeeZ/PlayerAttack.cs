@@ -11,7 +11,13 @@ public class PlayerAttack : MonoBehaviour
     public Animator animator;
     public Transform attackPos;
     public float attackRange;
+    private MovementController movement;
     private Collider2D[] thingsToAttack;
+
+    private void Start()
+    {
+        movement = gameObject.GetComponent<MovementController>();
+    }
 
     void Update()
     {
@@ -19,9 +25,10 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                StartCoroutine(StartCutting());
                 timeBtwAttack = startTimeBtwAttack;
                 animator.SetTrigger("Cut");
-                thingsToAttack = Physics2D.OverlapCircleAll(attackPos.position, attackRange, 1 << LayerMask.NameToLayer("heart"));
+                thingsToAttack = Physics2D.OverlapCircleAll(attackPos.position, attackRange ,1 << LayerMask.NameToLayer("heart"));
                 Invoke("Destroy", 0.2f);
             }
             
@@ -39,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
             if (thingsToAttack[i] != null)
             {
                 Destroy(thingsToAttack[i].gameObject);
+                GameManager.gameManager.score += 100;
             }
         }
     }
@@ -47,5 +55,12 @@ public class PlayerAttack : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+    IEnumerator StartCutting()
+    {
+        movement.isCutting = true;
+        yield return new WaitForSeconds(0.5f);
+        movement.isCutting = false;
     }
 }

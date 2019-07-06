@@ -20,12 +20,16 @@ public class EndManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.anyKeyDown)
+        {
+            retry();
+        }
     }
 
     public void retry()
     {
         GameManager.gameManager.score = 0;
-        SceneManager.LoadScene("LywockeezTest");
+        SceneChanger.Instance.FadeToScene(1);
+        GameManager.gameManager.isEnd = false;
     }
 }

@@ -1,0 +1,627 @@
+fileFormatVersion: 2
+guid: 435a2d27a31b7e942bf80841ed053ca1
+timeCreated: 1459124462
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RectangleWalk_0
+    21300002: RectangleWalk_1
+    21300004: RectangleWalk_2
+    21300006: RectangleWalk_3
+    21300008: RectangleWalk_4
+    21300010: RectangleWalk_5
+    21300012: RectangleWalk_6
+    21300014: RectangleWalk_7
+    21300016: RectangleWalk_8
+    21300018: RectangleWalk_9
+    21300020: RectangleWalk_10
+    21300022: RectangleWalk_11
+    21300024: RectangleWalk_12
+    21300026: RectangleWalk_13
+    21300028: RectangleWalk_14
+    21300030: RectangleWalk_15
+    21300032: RectangleWalk_16
+    21300034: RectangleWalk_17
+    21300036: RectangleWalk_18
+    21300038: RectangleWalk_19
+    21300040: RectangleWalk_20
+    21300042: RectangleWalk_21
+    21300044: RectangleWalk_22
+    21300046: RectangleWalk_23
+    21300048: RectangleWalk_24
+    21300050: RectangleWalk_25
+    21300052: RectangleWalk_26
+    21300054: RectangleWalk_27
+    21300056: RectangleWalk_28
+    21300058: RectangleWalk_29
+    21300060: RectangleWalk_30
+    21300062: RectangleWalk_31
+    21300064: RectangleWalk_32
+    21300066: RectangleWalk_33
+    21300068: RectangleWalk_34
+    21300070: RectangleWalk_35
+    21300072: RectangleWalk_36
+    21300074: RectangleWalk_37
+    21300076: RectangleWalk_38
+    21300078: RectangleWalk_39
+    21300080: RectangleWalk_40
+    21300082: RectangleWalk_41
+    21300084: RectangleWalk_42
+    21300086: RectangleWalk_43
+    21300088: RectangleWalk_44
+    21300090: RectangleWalk_45
+    21300092: RectangleWalk_46
+    21300094: RectangleWalk_47
+    21300096: RectangleWalk_48
+    21300098: RectangleWalk_49
+    21300100: RectangleWalk_50
+    21300102: RectangleWalk_51
+    21300104: RectangleWalk_52
+    21300106: RectangleWalk_53
+    21300108: RectangleWalk_54
+    21300110: RectangleWalk_55
+    21300112: RectangleWalk_56
+    21300114: RectangleWalk_57
+    21300116: RectangleWalk_58
+    21300118: RectangleWalk_59
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: RectangleWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 73}
+        - {x: -67, y: -128}
+        - {x: 70, y: -128}
+        - {x: 70, y: 73}
+        - {x: 68, y: 75}
+        - {x: -65, y: 75}
+    - name: RectangleWalk_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 72}
+        - {x: -67, y: -128}
+        - {x: 70, y: -128}
+        - {x: 70, y: 72}
+        - {x: 68, y: 74}
+        - {x: -65, y: 74}
+    - name: RectangleWalk_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 71}
+        - {x: -67, y: -128}
+        - {x: 70, y: -128}
+        - {x: 70, y: 71}
+        - {x: 68, y: 73}
+        - {x: -65, y: 73}
+    - name: RectangleWalk_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -69, y: 70}
+        - {x: -69, y: -128}
+        - {x: 72, y: -128}
+        - {x: 72, y: 70}
+        - {x: 70, y: 72}
+        - {x: -67, y: 72}
+    - name: RectangleWalk_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -70, y: 68}
+        - {x: -70, y: -128}
+        - {x: 73, y: -128}
+        - {x: 73, y: 68}
+        - {x: 71, y: 70}
+        - {x: -68, y: 70}
+    - name: RectangleWalk_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -72, y: 66}
+        - {x: -72, y: -128}
+        - {x: 75, y: -128}
+        - {x: 75, y: 66}
+        - {x: 73, y: 68}
+        - {x: -70, y: 68}
+    - name: RectangleWalk_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73, y: 64}
+        - {x: -73, y: -128}
+        - {x: 76, y: -128}
+        - {x: 76, y: 64}
+        - {x: 74, y: 66}
+        - {x: -71, y: 66}
+    - name: RectangleWalk_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -75, y: 61}
+        - {x: -75, y: -128}
+        - {x: 78, y: -128}
+        - {x: 78, y: 61}
+        - {x: 76, y: 63}
+        - {x: -73, y: 63}
+    - name: RectangleWalk_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -77, y: 59}
+        - {x: -77, y: -128}
+        - {x: 80, y: -128}
+        - {x: 80, y: 59}
+        - {x: 78, y: 61}
+        - {x: -75, y: 61}
+    - name: RectangleWalk_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -79, y: 57}
+        - {x: -79, y: -128}
+        - {x: 82, y: -128}
+        - {x: 82, y: 57}
+        - {x: 80, y: 59}
+        - {x: -77, y: 59}
+    - name: RectangleWalk_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -81, y: 54}
+        - {x: -81, y: -128}
+        - {x: 84, y: -128}
+        - {x: 84, y: 54}
+        - {x: 82, y: 56}
+        - {x: -79, y: 56}
+    - name: RectangleWalk_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -83, y: 52}
+        - {x: -83, y: -128}
+        - {x: 86, y: -128}
+        - {x: 86, y: 52}
+        - {x: 84, y: 54}
+        - {x: -81, y: 54}
+    - name: RectangleWalk_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -84, y: 51}
+        - {x: -84, y: -128}
+        - {x: 87, y: -128}
+        - {x: 87, y: 51}
+        - {x: 85, y: 53}
+        - {x: -82, y: 53}
+    - name: RectangleWalk_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -85, y: 49}
+        - {x: -85, y: -128}
+        - {x: 88, y: -128}
+        - {x: 88, y: 49}
+        - {x: 86, y: 51}
+        - {x: -83, y: 51}
+    - name: RectangleWalk_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -86, y: 48}
+        - {x: -86, y: -128}
+        - {x: 89, y: -128}
+        - {x: 89, y: 48}
+        - {x: 87, y: 50}
+        - {x: -84, y: 50}
+    - name: RectangleWalk_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -86, y: 48}
+        - {x: -86, y: -128}
+        - {x: 89, y: -128}
+        - {x: 89, y: 48}
+        - {x: 87, y: 50}
+        - {x: -84, y: 50}
+    - name: RectangleWalk_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -86, y: 48}
+        - {x: -86, y: -128}
+        - {x: 89, y: -128}
+        - {x: 89, y: 48}
+        - {x: 87, y: 50}
+        - {x: -84, y: 50}
+    - name: RectangleWalk_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -85, y: 49}
+        - {x: -85, y: -128}
+        - {x: 88, y: -128}
+        - {x: 88, y: 49}
+        - {x: 86, y: 51}
+        - {x: -83, y: 51}
+    - name: RectangleWalk_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -84, y: 51}
+        - {x: -84, y: -128}
+        - {x: 87, y: -128}
+        - {x: 87, y: 51}
+        - {x: 85, y: 53}
+        - {x: -82, y: 53}
+    - name: RectangleWalk_19
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -83, y: 52}
+        - {x: -83, y: -128}
+        - {x: 86, y: -128}
+        - {x: 86, y: 52}
+        - {x: 84, y: 54}
+        - {x: -81, y: 54}
+    - name: RectangleWalk_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -81, y: 54}
+        - {x: -81, y: -128}
+        - {x: 84, y: -128}
+        - {x: 84, y: 54}
+        - {x: 82, y: 56}
+        - {x: -79, y: 56}
+    - name: RectangleWalk_21
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -79, y: 57}
+        - {x: -79, y: -128}
+        - {x: 82, y: -128}
+        - {x: 82, y: 57}
+        - {x: 80, y: 59}
+        - {x: -77, y: 59}
+    - name: RectangleWalk_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -77, y: 59}
+        - {x: -77, y: -128}
+        - {x: 80, y: -128}
+        - {x: 80, y: 59}
+        - {x: 78, y: 61}
+        - {x: -75, y: 61}
+    - name: RectangleWalk_23
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -75, y: 61}
+        - {x: -75, y: -128}
+        - {x: 78, y: -128}
+        - {x: 78, y: 61}
+        - {x: 76, y: 63}
+        - {x: -73, y: 63}
+    - name: RectangleWalk_24
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73, y: 64}
+        - {x: -73, y: -128}
+        - {x: 76, y: -128}
+        - {x: 76, y: 64}
+        - {x: 74, y: 66}
+        - {x: -71, y: 66}
+    - name: RectangleWalk_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -72, y: 66}
+        - {x: -72, y: -128}
+        - {x: 75, y: -128}
+        - {x: 75, y: 66}
+        - {x: 73, y: 68}
+        - {x: -70, y: 68}
+    - name: RectangleWalk_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -70, y: 68}
+        - {x: -70, y: -128}
+        - {x: 73, y: -128}
+        - {x: 73, y: 68}
+        - {x: 71, y: 70}
+        - {x: -68, y: 70}
+    - name: RectangleWalk_27
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -69, y: 70}
+        - {x: -69, y: -128}
+        - {x: 72, y: -128}
+        - {x: 72, y: 70}
+        - {x: 70, y: 72}
+        - {x: -67, y: 72}
+    - name: RectangleWalk_28
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 71}
+        - {x: -67, y: -128}
+        - {x: 70, y: -128}
+        - {x: 70, y: 71}
+        - {x: 68, y: 73}
+        - {x: -65, y: 73}
+    - name: RectangleWalk_29
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 72}
+        - {x: -67, y: -128}
+        - {x: 70, y: -128}
+        - {x: 70, y: 72}
+        - {x: 68, y: 74}
+        - {x: -65, y: 74}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
