@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     public Vector3 offset;
     public CamShake _camShake;
     public Animator camAnimator;
+    public bool startMove = false;
     Vector3 targetPos;
     float viewBefore;
     float viewAfter;
@@ -37,11 +38,17 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         //CamDistance = transform.position.z;
+        targetPos = new Vector3(0, 0, Camera.main.orthographicSize);
     }
 
     void FixedUpdate()
     {
-        
+        if (startMove)
+        {
+            targetPos = new Vector3(0, 0, Camera.main.orthographicSize);
+            transform.position = Vector3.Slerp(transform.position, new Vector3(PlayerStats.Instance.transform.position.x, PlayerStats.Instance.transform.position.y, -10), 1f * Time.deltaTime);
+            Camera.main.orthographicSize = Vector3.Slerp(targetPos, new Vector3(0, 0, 2.5f), 1f * Time.deltaTime ).z;
+        }
 
         //targetPos = FlockManager.Instance.flockCenter;
         
@@ -96,4 +103,6 @@ public class CameraController : MonoBehaviour
         viewAfter = viewBefore;
         StartCoroutine(CamZoomDecrease());
     }
+
+
 }

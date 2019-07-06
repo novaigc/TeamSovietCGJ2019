@@ -22,7 +22,8 @@ public class Damage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            PlayerStats.Instance.TakeDamage(0.5f);
+            PlayerStats.Instance.brust.Play();
+            PlayerStats.Instance.TakeDamage(1f);
             GameManager.gameManager.edgeonly -= 0.1f;
             Destroy(this.gameObject);
             GameObject.Find("Canvasone").GetComponent<CanvasControl>().hurtshine();
