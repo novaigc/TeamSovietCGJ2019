@@ -35,12 +35,17 @@ public class PlayerStats : MonoBehaviour
     public float MaxHealth { get { return maxHealth; } }
     public float MaxTotalHealth { get { return maxTotalHealth; } }
     public Animator animator;
+    public bool isDeath = false;
+    public ParticleSystem brust;
 
     private void Update()
     {
         if (Health == 0 && GameManager.gameManager.isEnd == false)
         {
+            isDeath = true;
             animator.SetTrigger("Death");
+            animator.transform.parent.GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(CameraMove());
             Debug.Log("End");
             GameManager.gameManager.endgame();
         }
@@ -76,5 +81,11 @@ public class PlayerStats : MonoBehaviour
 
         if (onHealthChangedCallback != null)
             onHealthChangedCallback.Invoke();
+    }
+
+    IEnumerator CameraMove()
+    {
+        yield return new WaitForSeconds(1f);
+        CameraController.Instance.startMove = true;
     }
 }

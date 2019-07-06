@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour
     private Vector3 moveDirection;
     public SpriteRenderer mySpriteRenderer;
     public bool isCutting = false;
+
     public enum Direction
     {
         right,
@@ -26,7 +27,7 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isCutting)
+        if (!isCutting && !PlayerStats.Instance.isDeath)
         {           
             Move2();
         }
