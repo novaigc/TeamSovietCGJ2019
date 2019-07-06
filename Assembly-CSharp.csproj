@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\LywockeeZ\MovementController.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\Spawner.cs" />
+    <Compile Include="Assets\Scripts\LywockeeZ\SpawnerManager.cs" />
     <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Scripts\borsh\blackwhite.shader" />
     <Reference Include="Unity.Timeline.Editor">
