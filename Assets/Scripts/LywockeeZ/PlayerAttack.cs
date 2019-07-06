@@ -21,14 +21,14 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        thingsToAttack = Physics2D.OverlapCircleAll(attackPos.position, attackRange, 1 << LayerMask.NameToLayer("heart"));
         if (timeBtwAttack <= 0)
         {
             if (Input.GetKeyDown(KeyCode.Space))
-            {
+            {           
                 StartCoroutine(StartCutting());
                 timeBtwAttack = startTimeBtwAttack;
                 animator.SetTrigger("Cut");
-                thingsToAttack = Physics2D.OverlapCircleAll(attackPos.position, attackRange ,1 << LayerMask.NameToLayer("heart"));
                 Invoke("Destroy", 0.2f);
             }
             
@@ -39,14 +39,21 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    public void Destroy()
+    public void  Destroy()
     {
+        //foreach (var item in thingsToAttack)
+        //{
+        //    if (item != null)
+        //    {
+        //        Destroy(item.gameObject);
+        //        GameManager.gameManager.score += 100;
+        //    }
+        //}
         for (int i = 0; i < thingsToAttack.Length; i++)
         {
             if (thingsToAttack[i] != null)
             {
-                Destroy(thingsToAttack[i].gameObject);
-                GameManager.gameManager.score += 100;
+                StartCoroutine(distroyheart(thingsToAttack[i]));
             }
         }
     }
@@ -62,5 +69,12 @@ public class PlayerAttack : MonoBehaviour
         movement.isCutting = true;
         yield return new WaitForSeconds(0.5f);
         movement.isCutting = false;
+    }
+    IEnumerator distroyheart(Collider2D heart)
+    {
+        heart.transform.GetComponent<Heart>().animator.SetTrigger("StartBreak");
+        yield return new WaitForSeconds(3f);
+        Destroy(heart.transform.parent.gameObject);
+        GameManager.gameManager.score += 100;
     }
 }

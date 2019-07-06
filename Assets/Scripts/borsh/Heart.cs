@@ -9,9 +9,11 @@ public class Heart : MonoBehaviour
     private float rotatetime = 0;
     float rotateangle = 0;
     private GameObject go;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        animator = transform.GetComponent<Animator>();
         GameManager.gameManager.hearts.Add(this.gameObject);
         transform.GetComponent<CircleCollider2D>().enabled = false;
         Invoke("enablecollsion", 1.5f);
