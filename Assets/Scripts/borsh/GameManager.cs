@@ -21,6 +21,10 @@ public class GameManager {
     public float movespeed = 1f;
     public bool iseattriangle = false;
     public int[] order = new int[10];
+
+
+
+
     public int waves = 0;
     public int score = 100;
     public List<GameObject> hearts = new List<GameObject>();

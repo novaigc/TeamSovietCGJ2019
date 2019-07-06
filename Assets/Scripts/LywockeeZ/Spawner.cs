@@ -6,11 +6,11 @@ public class Spawner : MonoBehaviour
 {
     public bool isActive = false;
     public GameObject[] items;
-    public float angleRange = 180f;
+    public Vector2 angleRange = new Vector2(0,180f);
 
     void Awake()
     {
-        SpawnerManager.Instance.spawners.Add(this);
+        //SpawnerManager.Instance.spawners.Add(this);
     }
 
 
@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator Generator()
     {
-        Instantiate(items[Random.Range(0,items.Length)], transform.position , Quaternion.Euler(0, 0, Random.Range(0,angleRange)));
+        Instantiate(items[Random.Range(0,items.Length)], transform.position , Quaternion.Euler(0, 0, Random.Range(angleRange.x,angleRange.y)));
         isActive = false;
         yield return null;
     }
