@@ -34,11 +34,13 @@ public class PlayerStats : MonoBehaviour
     public float Health { get { return health; } }
     public float MaxHealth { get { return maxHealth; } }
     public float MaxTotalHealth { get { return maxTotalHealth; } }
+    public Animator animator;
 
     private void Update()
     {
         if (Health == 0 && GameManager.gameManager.isEnd == false)
         {
+            animator.SetTrigger("Death");
             Debug.Log("End");
             GameManager.gameManager.endgame();
         }

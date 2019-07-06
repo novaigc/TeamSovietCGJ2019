@@ -77,6 +77,5 @@ public class GameManager {
         iseattriangle = false;
         baseMount = 20;
         isEnd = true;
-        SceneChanger.Instance.FadeToNextScene();
     }
 }

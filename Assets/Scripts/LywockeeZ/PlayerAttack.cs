@@ -25,7 +25,8 @@ public class PlayerAttack : MonoBehaviour
         if (timeBtwAttack <= 0)
         {
             if (Input.GetKeyDown(KeyCode.Space))
-            {           
+            {
+                
                 StartCoroutine(StartCutting());
                 timeBtwAttack = startTimeBtwAttack;
                 animator.SetTrigger("Cut");
@@ -49,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
         //        GameManager.gameManager.score += 100;
         //    }
         //}
+
         for (int i = 0; i < thingsToAttack.Length; i++)
         {
             if (thingsToAttack[i] != null)
@@ -72,6 +74,7 @@ public class PlayerAttack : MonoBehaviour
     }
     IEnumerator distroyheart(Collider2D heart)
     {
+        CameraController.Instance.CamShake();
         heart.transform.GetComponent<Heart>().go.transform.GetComponent<Animator>().SetTrigger("StartBreak");
         heart.transform.GetComponent<CircleCollider2D>().enabled = false;
         heart.transform.GetComponent<Heart>().go.transform.GetComponent<CircleCollider2D>().enabled = false;
