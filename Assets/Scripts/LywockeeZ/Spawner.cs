@@ -5,21 +5,28 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public bool isActive = false;
-    public float delay = 1f;
-    public GameObject heart;
+    public GameObject[] items;
+    public float angleRange = 180f;
 
-    void Start()
+    void Awake()
     {
-        StartCoroutine(Generator());
+        SpawnerManager.Instance.spawners.Add(this);
+    }
+
+
+    private void Update()
+    {
+        if (isActive)
+        {
+            StartCoroutine(Generator());
+        }
     }
 
     IEnumerator Generator()
     {
-        yield return new WaitForSeconds(delay);
-        if (isActive)
-        {
-            Instantiate(heart, transform.position , Quaternion.Euler(0, 0, Random.Range(0,180)));
-        }
-        StartCoroutine(Generator());
+        Instantiate(items[Random.Range(0,items.Length -1)], transform.position , Quaternion.Euler(0, 0, Random.Range(0,angleRange)));
+        isActive = false;
+        yield return null;
     }
+
 }

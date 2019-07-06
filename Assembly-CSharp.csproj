@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\LywockeeZ\MovementController.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\LywockeeZ\Spawner.cs" />
+    <Compile Include="Assets\Scripts\LywockeeZ\SpawnerManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/Unity/Projects/TeamSovietCGJ2019/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
