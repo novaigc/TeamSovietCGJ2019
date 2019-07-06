@@ -17,7 +17,7 @@ public class GameManager {
         }
     }
     public int HP;
-    public float movespeed = 0.5f;
+    public float movespeed = 1f;
     public bool iseattriangle = false;
     public int[] order = new int[10];
     public int waves = 0;
@@ -65,6 +65,11 @@ public class GameManager {
     }
     public void endgame()
     {
-
+        placeorder(score);
+        saveorder();
+        score = 0;
+        waves = 0;
+        movespeed = 1f;
+        iseattriangle = false;
     }
 }

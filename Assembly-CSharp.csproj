@@ -70,6 +70,7 @@
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\Scripts\borsh\CanvasControl.cs" />
+    <Compile Include="Assets\Scripts\borsh\EndManager.cs" />
     <Compile Include="Assets\Scripts\borsh\GameManager.cs" />
     <Compile Include="Assets\Scripts\borsh\Heart.cs" />
     <Compile Include="Assets\Scripts\borsh\myCamera.cs" />

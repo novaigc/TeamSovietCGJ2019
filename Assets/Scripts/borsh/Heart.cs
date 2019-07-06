@@ -12,7 +12,9 @@ public class Heart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movespeed=GameManager.gameManager.movespeed;
+        transform.GetComponent<CircleCollider2D>().enabled = false;
+        Invoke("enablecollsion", 1.5f);
+        movespeed =GameManager.gameManager.movespeed;
         rotatespeed = 4f;
         go= Instantiate(transform.gameObject, transform.position, Quaternion.identity);
         go.GetComponent<Heart>().enabled = false;
@@ -25,10 +27,15 @@ public class Heart : MonoBehaviour
     void Update()
     {        
         transform.Translate(Vector3.right * movespeed * Time.deltaTime);
-        randomrotate();
+        if(GameManager.gameManager.waves>=4)
+             randomrotate();
         go.transform.position = transform.position;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "wall")
@@ -57,7 +64,6 @@ public class Heart : MonoBehaviour
         }
     }
 
-
     private void randomrotate()
     {
         rotatetime += Time.deltaTime;       
@@ -71,5 +77,13 @@ public class Heart : MonoBehaviour
         transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, rotation, rotatespeed * Time.deltaTime);
     }
 
+    private void enablecollsion()
+    {
+        transform.GetComponent<CircleCollider2D>().enabled = true;
+    }
+    private void OnDestroy()
+    {
+        Destroy(go);
+    }
 
 }

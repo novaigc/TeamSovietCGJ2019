@@ -7,6 +7,7 @@ public class CanvasControl : MonoBehaviour
 {
     private GameObject spawner;
     private GameObject score;
+    private GameObject waveamount;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,9 @@ public class CanvasControl : MonoBehaviour
     public void scoreup()
     {
         score.GetComponent<Text>().text = GameManager.gameManager.score.ToString();
+    }
+    public void showwave()
+    {
+        waveamount.GetComponent<Text>().text = "当前第" + GameManager.gameManager.waves.ToString() + "波";
     }
 }
