@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class CanvasControl : MonoBehaviour
 {
-    private GameObject spawner;
+    private GameObject redimage;
     private GameObject score;
-    private GameObject waveamount;
+
+   // private GameObject waveamount;
     // Start is called before the first frame update
     void Start()
     {
         score = GameObject.Find("score");
-        waveamount = GameObject.Find("waveamount");
+        redimage = transform.Find("redimage").gameObject;
+       // waveamount = GameObject.Find("waveamount");
     }
 
     // Update is called once per frame
     void Update()
     {
         scoreup();
-        showwave();
+        //showwave();
     }
     public void nextwave()
     {
@@ -37,8 +40,13 @@ public class CanvasControl : MonoBehaviour
     {
         score.GetComponent<Text>().text = GameManager.gameManager.score.ToString("00000");
     }
-    public void showwave()
+   // public void showwave()
+   // {
+    //    waveamount.GetComponent<Text>().text = "当前第" + GameManager.gameManager.waves.ToString("00") + "波";
+   // }
+   public void hurtshine()
     {
-        waveamount.GetComponent<Text>().text = "当前第" + GameManager.gameManager.waves.ToString("00") + "波";
+        Tweener tw = redimage.GetComponent<Image>().DOFade(0.5f, 0.3f);
+        tw.OnComplete(delegate { redimage.GetComponent<Image>().DOFade(0f, 0.3f); });
     }
 }
