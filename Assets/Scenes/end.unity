@@ -1127,8 +1127,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Game Design: Dapao\nProgrammer: Boringfish\n                      LywockeeZ\nArt:
-    \               Glacia"
+  m_Text: "Game Design: Dapao\nProgram:         Boringfish\n                        LywockeeZ\nArt:
+    \                 Glacia"
 --- !u!222 &1797301475
 CanvasRenderer:
   m_ObjectHideFlags: 0

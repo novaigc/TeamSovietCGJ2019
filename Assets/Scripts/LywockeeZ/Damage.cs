@@ -23,6 +23,7 @@ public class Damage : MonoBehaviour
             PlayerStats.Instance.TakeDamage(0.5f);
             GameManager.gameManager.edgeonly -= 0.1f;
             Destroy(this.gameObject);
+            GameObject.Find("Canvas").GetComponent<CanvasControl>().hurtshine();
         }
     }
 }
