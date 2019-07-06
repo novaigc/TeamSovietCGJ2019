@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class TitleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameStart();
         pressanykey();
     }
     void pressanykey()
@@ -35,6 +37,15 @@ public class TitleManager : MonoBehaviour
             canvasGroup.alpha += fadespeed * Time.deltaTime;
             if (canvasGroup.alpha >= 0.9)
                 keyisfade = false;
+        }
+    }
+
+    public void GameStart()
+    {
+        if (Input.anyKeyDown)
+        {
+            GameManager.gameManager.isEnd = false;
+            SceneManager.LoadScene("Main");
         }
     }
 }

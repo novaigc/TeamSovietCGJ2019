@@ -37,7 +37,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (Health == 0)
+        if (Health <= 0 && GameManager.gameManager.isEnd == false)
         {
             Debug.Log("End");
             GameManager.gameManager.endgame();
