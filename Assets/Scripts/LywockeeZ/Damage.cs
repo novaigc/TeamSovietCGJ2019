@@ -23,6 +23,7 @@ public class Damage : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerStats.Instance.brust.Play();
+            AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\heartbeat") as AudioClip, new Vector3(0, 0, 0));
             PlayerStats.Instance.TakeDamage(1f);
             GameManager.gameManager.edgeonly -= 0.1f;
             Destroy(this.gameObject);

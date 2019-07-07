@@ -30,6 +30,7 @@ public class PlayerAttack : MonoBehaviour
                 StartCoroutine(StartCutting());
                 timeBtwAttack = startTimeBtwAttack;
                 animator.SetTrigger("Cut");
+                AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\Swing") as AudioClip, new Vector3(0, 0, 0));
                 Invoke("Destroy", 0.2f);
             }
             
@@ -74,10 +75,11 @@ public class PlayerAttack : MonoBehaviour
     }
     IEnumerator distroyheart(Collider2D heart)
     {
-        CameraController.Instance.CamShake();
-        heart.transform.GetComponent<Heart>().go.transform.GetComponent<Animator>().SetTrigger("StartBreak");
         heart.transform.GetComponent<CircleCollider2D>().enabled = false;
         heart.transform.GetComponent<Heart>().go.transform.GetComponent<CircleCollider2D>().enabled = false;
+        CameraController.Instance.CamShake();
+        heart.transform.GetComponent<Heart>().go.transform.GetComponent<Animator>().SetTrigger("StartBreak");
+        AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\hit") as AudioClip, new Vector3(0, 0, 0));        
         yield return new WaitForSeconds(0.5f);
         Destroy(heart.transform.parent.gameObject);
         GameManager.gameManager.score += 100;

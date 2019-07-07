@@ -201,7 +201,7 @@ MonoBehaviour:
   isActive: 0
   items:
   - {fileID: 5739874405237015190, guid: 414ae6dc761061a42b1219e036fd0976, type: 3}
-  - {fileID: 1742795382272839432, guid: 647bad2fa3bc4664aac2b37d320e8740, type: 3}
+  - {fileID: 5739874405237015190, guid: 414ae6dc761061a42b1219e036fd0976, type: 3}
   angleRange: {x: 90, y: 270}
 --- !u!4 &22115245
 Transform:
@@ -2857,6 +2857,7 @@ MonoBehaviour:
   isActive: 0
   items:
   - {fileID: 5739874405237015190, guid: 414ae6dc761061a42b1219e036fd0976, type: 3}
+  - {fileID: 5739874405237015190, guid: 414ae6dc761061a42b1219e036fd0976, type: 3}
   - {fileID: 5243479297502486931, guid: 63005a7186b9c7643945990e86d524b3, type: 3}
   angleRange: {x: 0, y: 180}
 --- !u!4 &1749758903
@@ -3959,7 +3960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065729180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.83, z: -10}
+  m_LocalPosition: {x: 0, y: 0.83, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}

@@ -20,6 +20,7 @@ public class Heal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\Heal") as AudioClip, new Vector3(0, 0, 0));
             PlayerStats.Instance.Heal(1f);
             Destroy(this.gameObject);
         }

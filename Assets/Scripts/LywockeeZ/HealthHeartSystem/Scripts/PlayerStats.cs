@@ -43,13 +43,8 @@ public class PlayerStats : MonoBehaviour
     {
         if (Health == 0 && GameManager.gameManager.isEnd == false && isDeath == false)
         {
-            isDeath = true;
-            animator.SetTrigger("Death");
-            animator.transform.parent.GetComponent<BoxCollider2D>().enabled = false;
-            StartCoroutine(CameraMove());
-            Debug.Log("End");
-            Canvas.enabled = false;
-            
+            StartCoroutine(die());
+           
         }
     }
 
@@ -91,5 +86,17 @@ public class PlayerStats : MonoBehaviour
         CameraController.Instance.startMove = true;
         yield return new WaitForSeconds(2f);
         GameManager.gameManager.endgame();
+    }
+    IEnumerator die()
+    {
+        isDeath = true;
+        animator.SetTrigger("Death");
+        AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\fall") as AudioClip, new Vector3(0, 0, 0));
+        animator.transform.parent.GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\Death") as AudioClip, new Vector3(0, 0, 0));
+        StartCoroutine(CameraMove());
+        Debug.Log("End");
+        Canvas.enabled = false;
     }
 }

@@ -30,7 +30,7 @@ public class Heart : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * movespeed * Time.deltaTime);      
-        if(GameManager.gameManager.waves>=4)
+        if(SpawnerManager.Instance.gameLevel>=3)
              randomrotate();
         go.transform.position = transform.position;
         if (transform.position.x >= 10 || transform.position.x <= -9 || transform.position.y <= -4 || transform.position.y >= 7)

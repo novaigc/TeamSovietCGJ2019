@@ -9,15 +9,15 @@ public class TitleManager : MonoBehaviour
     private bool keyisfade;
     private float fadespeed;
     private bool isplayed = false;
-    private AudioSource audioSource;
+    private AudioSource[] audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Resources.Load(@"Audios\TITLE1") as AudioClip;
-        audioSource.loop = false;
-        audioSource.Play();
-        Debug.Log(audioSource.clip);
+        audioSource = GetComponents<AudioSource>();
+        audioSource[0].clip = Resources.Load(@"Audios\TITLE1") as AudioClip;
+        audioSource[0].loop = false;
+        audioSource[0].Play();
+        //Debug.Log(audioSource[0].clip);
         presskey = GameObject.Find("press any key");
         keyisfade = false;
         fadespeed = 0.5f;
@@ -26,13 +26,13 @@ public class TitleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameStart();
-        pressanykey();
-        if(!audioSource.isPlaying&&isplayed==false)
+        //GameStart();
+        //pressanykey();
+        if(!audioSource[0].isPlaying&&isplayed==false)
         {
-            audioSource.clip= Resources.Load(@"Audios\TITLE2") as AudioClip;
-            audioSource.loop = true;
-            audioSource.Play();
+            audioSource[0].clip= Resources.Load(@"Audios\TITLE2") as AudioClip;
+            audioSource[0].loop = true;
+            audioSource[0].Play();
             isplayed = true;
         }
     }
@@ -63,7 +63,16 @@ public class TitleManager : MonoBehaviour
     }
     public void start()
     {
-
+       // Debug.Log("dsf");
+        StartCoroutine(startgame());
+    }
+    IEnumerator startgame()
+    {
+        audioSource[1].clip = Resources.Load(@"Audios\SFX\Select") as AudioClip;
+        audioSource[1].loop = false;
+        audioSource[1].Play();
+        //Debug.Log(audioSource[1].clip);
+        yield return new WaitForSeconds(0.4f);
         SceneChanger.Instance.FadeToNextScene();
         GameManager.gameManager.isEnd = false;
     }
