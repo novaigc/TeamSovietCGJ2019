@@ -38,7 +38,7 @@ public class EndManager : MonoBehaviour
     public void retry()
     {
         GameManager.gameManager.score = 0;
-        GameManager.gameManager.edgeonly = 1;
+        GameManager.gameManager.edgeonly = 0.1f;
         SceneChanger.Instance.FadeToScene(1);
         GameManager.gameManager.isEnd = false;
     }

@@ -3947,7 +3947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CamDistance: 0
   moveSpeed: 1
-  shakePower: 0.3
+  shakePower: 0.5
   offset: {x: 0, y: 0, z: 0}
   _camShake: {fileID: 963194230}
   camAnimator: {fileID: 0}

@@ -16,7 +16,7 @@ public class GameManager {
             return gamemanager;
         }
     }
-    public float edgeonly = 1f;
+    public float edgeonly = 0.1f;
     public int HP;
     public float movespeed = 1f;
     public bool iseattriangle = false;
