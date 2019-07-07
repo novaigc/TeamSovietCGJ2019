@@ -82,6 +82,6 @@ public class PlayerAttack : MonoBehaviour
         AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\hit") as AudioClip, new Vector3(0, 0, 0));        
         yield return new WaitForSeconds(0.5f);
         Destroy(heart.transform.parent.gameObject);
-        GameManager.gameManager.score += 100;
+        GameManager.gameManager.score += GameManager.gameManager.baseScore;
     }
 }

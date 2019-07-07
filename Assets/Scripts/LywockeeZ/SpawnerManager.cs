@@ -40,6 +40,7 @@ public class SpawnerManager : MonoBehaviour
     void Update()
     {
         ChangeGameLevel();
+        
         //if (heartCount == GameManager.gameManager.baseMount)
         //{
         //    StopAllCoroutines();
@@ -50,6 +51,7 @@ public class SpawnerManager : MonoBehaviour
     IEnumerator RandomOpen()
     {
         yield return new WaitForSeconds(delay);
+        GameManager.gameManager.score += gameLevel * 10;
         spawners[Random.Range(0, spawnerCount - 1)].isActive = true;
         //heartCount++;
         StartCoroutine(RandomOpen());
@@ -73,17 +75,19 @@ public class SpawnerManager : MonoBehaviour
         if (increaseSpeed >= 1 && increaseSpeed < 2)
         {
             gameLevel = 1;
-            spawnerCount = 4;
-            delay = 1.5f;
-            GameManager.gameManager.movespeed = 1.2f;
+            spawnerCount = 6;
+            delay = 1.2f;
+            GameManager.gameManager.movespeed = 1.5f;
+            GameManager.gameManager.baseScore = 55;
         }
 
         if (increaseSpeed >= 2 && increaseSpeed < 3)
         {
             gameLevel = 2;
-            spawnerCount = 8;
-            delay = 1.5f;
-            GameManager.gameManager.movespeed = 2f;
+            spawnerCount = 10;
+            delay = 1.2f;
+            GameManager.gameManager.movespeed = 2.5f;
+            GameManager.gameManager.baseScore = 112;
         }
 
         if (increaseSpeed >= 3 && increaseSpeed < 4.5)
@@ -91,7 +95,8 @@ public class SpawnerManager : MonoBehaviour
             gameLevel = 3;
             spawnerCount = 12;
             delay = 1f;
-            GameManager.gameManager.movespeed = 2.5f;
+            GameManager.gameManager.movespeed = 3.5f;
+            GameManager.gameManager.baseScore = 225;
         }
 
         if (increaseSpeed >= 4.5)
@@ -99,7 +104,8 @@ public class SpawnerManager : MonoBehaviour
             gameLevel = 4;
             spawnerCount = 16;
             delay = 0.5f;
-            GameManager.gameManager.movespeed = 3f;
+            GameManager.gameManager.movespeed = 4.5f;
+            GameManager.gameManager.baseScore = 405;
         }
     }
 }

@@ -41,7 +41,7 @@ public class CanvasControl : MonoBehaviour
     }
     public void scoreup()
     {
-        score.GetComponent<Text>().text = GameManager.gameManager.score.ToString("00000");
+        score.GetComponent<Text>().text = GameManager.gameManager.score.ToString();
     }
    // public void showwave()
    // {
