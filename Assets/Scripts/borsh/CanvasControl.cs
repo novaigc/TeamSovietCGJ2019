@@ -68,6 +68,7 @@ public class CanvasControl : MonoBehaviour
             combine.SetActive(true);
             combine.GetComponent<Text>().text = "连击 " + combineamount.ToString();
             Tweener tw = combine.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(0.5f, 0.5f, 0.5f), 0.2f);
+            tw.SetEase(Ease.OutExpo);
             tw.OnComplete(delegate { combine.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 0.25f); });
         }
         else
