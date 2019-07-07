@@ -84,11 +84,12 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         CameraController.Instance.startMove = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         GameManager.gameManager.endgame();
     }
     IEnumerator die()
     {
+        GameObject.Find("Canvasone").GetComponent<AudioSource>().Stop();
         isDeath = true;
         animator.SetTrigger("Death");
         AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\fall") as AudioClip, new Vector3(0, 0, 0));
