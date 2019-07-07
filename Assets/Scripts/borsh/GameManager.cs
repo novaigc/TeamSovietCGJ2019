@@ -26,7 +26,7 @@ public class GameManager {
 
 
     public int waves = 0;
-    public int score = 100;
+    public int score = 0;
     public List<GameObject> hearts = new List<GameObject>();
     public int baseMount = 20;
     public bool isEnd = false;
