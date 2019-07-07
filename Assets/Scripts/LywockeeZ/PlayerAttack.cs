@@ -56,6 +56,8 @@ public class PlayerAttack : MonoBehaviour
         {
             if (thingsToAttack[i] != null)
             {
+                GameObject.Find("Canvasone").GetComponent<CanvasControl>().combineamount++;
+                GameObject.Find("Canvasone").GetComponent<CanvasControl>().showcombine();
                 StartCoroutine(distroyheart(thingsToAttack[i]));
             }
         }

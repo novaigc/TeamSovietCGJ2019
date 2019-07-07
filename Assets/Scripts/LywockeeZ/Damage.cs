@@ -22,6 +22,8 @@ public class Damage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            GameObject.Find("Canvasone").GetComponent<CanvasControl>().combineamount=0;
+            GameObject.Find("Canvasone").GetComponent<CanvasControl>().showcombine();
             PlayerStats.Instance.brust.Play();
             AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\heartbeat") as AudioClip, new Vector3(0, 0, 0));
             PlayerStats.Instance.TakeDamage(1f);

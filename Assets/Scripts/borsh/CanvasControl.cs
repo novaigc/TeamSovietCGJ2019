@@ -9,11 +9,15 @@ public class CanvasControl : MonoBehaviour
     private GameObject redimage;
     private GameObject score;
     private GameObject intro;
+    public int combineamount;
+    private GameObject combine;
 
    // private GameObject waveamount;
     // Start is called before the first frame update
     void Start()
     {
+        combineamount = 0;
+        combine= transform.Find("combine").gameObject;
         intro = transform.Find("intro").gameObject;
         StartCoroutine(showintro());      
         score = GameObject.Find("score");
@@ -56,5 +60,17 @@ public class CanvasControl : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         intro.GetComponent<Image>().DOFade(0, 1f);
+    }
+    public void showcombine()
+    {
+        if (combineamount >= 5)
+        {
+            combine.SetActive(true);
+            combine.GetComponent<Text>().text = "连击 " + combineamount.ToString();
+            Tweener tw = combine.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(0.5f, 0.5f, 0.5f), 0.2f);
+            tw.OnComplete(delegate { combine.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 0.25f); });
+        }
+        else
+            combine.SetActive(false);
     }
 }
