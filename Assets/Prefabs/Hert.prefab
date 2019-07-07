@@ -177,6 +177,11 @@ PrefabInstance:
       propertyPath: m_AllowRoll
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 10628819082542471, guid: 36f0d0687569962488a2e7590395519b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4567988317437417925, guid: 36f0d0687569962488a2e7590395519b,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.ctime1
@@ -414,6 +419,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6460415216233253424, guid: 647bad2fa3bc4664aac2b37d320e8740,
+        type: 3}
+      propertyPath: brust
+      value: 
+      objectReference: {fileID: 2480830210571920612}
+    - target: {fileID: 1742795382272839438, guid: 647bad2fa3bc4664aac2b37d320e8740,
         type: 3}
       propertyPath: brust
       value: 

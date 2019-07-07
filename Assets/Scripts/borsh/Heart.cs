@@ -10,6 +10,7 @@ public class Heart : MonoBehaviour
     float rotateangle = 0;
     public GameObject go;
     public Animator animator;
+    public ParticleSystem brust;
     // Start is called before the first frame update
     void Start()
     {

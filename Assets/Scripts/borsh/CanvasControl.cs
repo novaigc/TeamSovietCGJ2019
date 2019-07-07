@@ -11,18 +11,21 @@ public class CanvasControl : MonoBehaviour
     private GameObject intro;
     public int combineamount;
     private GameObject combine;
+    private GameObject panel;
 
    // private GameObject waveamount;
     // Start is called before the first frame update
     void Start()
     {
+        panel = transform.Find("Panel").gameObject;
         combineamount = 0;
         combine= transform.Find("combine").gameObject;
         intro = transform.Find("intro").gameObject;
         StartCoroutine(showintro());      
         score = GameObject.Find("score");
         redimage = transform.Find("redimage").gameObject;
-       // waveamount = GameObject.Find("waveamount");
+        // waveamount = GameObject.Find("waveamount");
+        //GameManager.gameManager.zeroorder();
     }
 
     // Update is called once per frame
@@ -60,6 +63,7 @@ public class CanvasControl : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         intro.GetComponent<Image>().DOFade(0, 1f);
+        panel.GetComponent<Image>().DOFade(0, 1f);
     }
     public void showcombine()
     {

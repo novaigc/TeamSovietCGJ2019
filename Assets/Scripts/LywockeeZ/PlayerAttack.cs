@@ -81,6 +81,7 @@ public class PlayerAttack : MonoBehaviour
         heart.transform.GetComponent<Heart>().go.transform.GetComponent<CircleCollider2D>().enabled = false;
         CameraController.Instance.CamShake();
         heart.transform.GetComponent<Heart>().go.transform.GetComponent<Animator>().SetTrigger("StartBreak");
+        //heart.transform.GetComponent<Heart>().brust.Play();
         AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\hit") as AudioClip, new Vector3(0, 0, 0));        
         yield return new WaitForSeconds(0.5f);
         Destroy(heart.transform.parent.gameObject);

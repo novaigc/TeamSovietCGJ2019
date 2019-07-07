@@ -55,7 +55,11 @@ public class GameManager {
             order[i] = PlayerPrefs.GetInt("order" + i.ToString());
         }
     }
-
+    public void zeroorder()
+    {
+        for (int i = 0; i < 10; i++)
+            PlayerPrefs.SetInt("order" + i.ToString(), 0);
+    }
     public AsyncOperation loadscene(string name)
     {
         AsyncOperation op = SceneManager.LoadSceneAsync(name);
