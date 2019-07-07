@@ -51,7 +51,10 @@ public class SpawnerManager : MonoBehaviour
     IEnumerator RandomOpen()
     {
         yield return new WaitForSeconds(delay);
-        GameManager.gameManager.score += gameLevel * 10;
+        if (!PlayerStats.Instance.isDeath)
+        {
+            GameManager.gameManager.score += gameLevel * 10;
+        }
         spawners[Random.Range(0, spawnerCount - 1)].isActive = true;
         //heartCount++;
         StartCoroutine(RandomOpen());

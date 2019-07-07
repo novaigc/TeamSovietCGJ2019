@@ -47,6 +47,7 @@ public class GameManager {
     {
         for (int i = 0; i < 10; i++)
             PlayerPrefs.SetInt("order" + i.ToString(), order[i]);
+            
     }
     public void loadorder()
     {
@@ -81,6 +82,7 @@ public class GameManager {
         loadorder();
         placeorder(score);
         saveorder();
+        Debug.Log(order[0]);
         waves = 0;
         movespeed = 1f;
         iseattriangle = false;

@@ -13,6 +13,7 @@ public class EndManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GameManager.gameManager.zeroorder();
         tip = transform.Find("tip").gameObject;     
         GameManager.gameManager.loadorder();
         for (int i=1;i<=5;i++)
