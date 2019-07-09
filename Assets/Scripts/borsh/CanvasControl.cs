@@ -117,9 +117,9 @@ public class CanvasControl : MonoBehaviour
         ifshow = GameManager.gameManager.placeorder(GameManager.gameManager.score);
         if (ifshow<5)
         {
-            input.SetActive(true);
-            caninput = true;
-            input.GetComponent<RectTransform>().DOLocalMoveY(36, 2f);
+            input.SetActive(true);            
+            Tweener tw= input.GetComponent<RectTransform>().DOLocalMoveY(36, 2f);
+            tw.OnComplete(delegate { caninput = true; });
         }
         else
             GameManager.gameManager.endgame(ifshow);
