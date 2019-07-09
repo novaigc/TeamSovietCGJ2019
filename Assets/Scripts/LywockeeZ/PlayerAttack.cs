@@ -79,7 +79,9 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator distroyheart(Collider2D heart)
     {
         heart.transform.GetComponent<CircleCollider2D>().enabled = false;
+        heart.transform.GetComponent<Rigidbody2D>().Sleep();
         heart.transform.GetComponent<Heart>().go.transform.GetComponent<CircleCollider2D>().enabled = false;
+        heart.transform.GetComponent<Heart>().go.transform.GetComponent<Rigidbody2D>().Sleep();
         CameraController.Instance.CamShake();
         heart.transform.GetComponent<Heart>().go.transform.GetComponent<Animator>().SetTrigger("StartBreak");
         //heart.transform.GetComponent<Heart>().brust.Play();
