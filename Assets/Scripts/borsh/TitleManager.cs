@@ -20,7 +20,7 @@ public class TitleManager : MonoBehaviour
         //Debug.Log(audioSource[0].clip);
         presskey = GameObject.Find("press any key");
         keyisfade = false;
-        fadespeed = 0.5f;
+        fadespeed = 1.5f;
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class TitleManager : MonoBehaviour
         if (keyisfade==false)
         {
             canvasGroup.alpha -= fadespeed * Time.deltaTime;
-            if (canvasGroup.alpha <= 0.25)
+            if (canvasGroup.alpha <= 0.05)
                 keyisfade = true;
         }
         else

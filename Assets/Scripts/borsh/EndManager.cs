@@ -19,7 +19,7 @@ public class EndManager : MonoBehaviour
         GameManager.gameManager.loadname();
         for (int i=1;i<=5;i++)
         {
-            GameObject.Find("order" + i.ToString()).GetComponent<Text>().text = GameManager.gameManager.order[i - 1].ToString("00000");     
+            GameObject.Find("order" + i.ToString()).GetComponent<Text>().text = GameManager.gameManager.order[i - 1].ToString("000000");     
         }
         for (int i = 1; i <= 5; i++)
         {
@@ -28,7 +28,7 @@ public class EndManager : MonoBehaviour
         for (int i = 1; i <= 5; i++)
         {
             if (GameObject.Find("name" + i.ToString()).GetComponent<Text>().text == GameManager.gameManager.curname)
-                if (GameObject.Find("order" + i.ToString()).GetComponent<Text>().text == GameManager.gameManager.score.ToString("00000"))
+                if (GameObject.Find("order" + i.ToString()).GetComponent<Text>().text == GameManager.gameManager.score.ToString("000000"))
                 {
                     GameObject.Find("name" + i.ToString()).GetComponent<Text>().color = Color.yellow;
                     GameObject.Find("order" + i.ToString()).GetComponent<Text>().color = Color.yellow;
@@ -38,7 +38,7 @@ public class EndManager : MonoBehaviour
 
 
         score = GameObject.Find("score");
-        score.GetComponent<Text>().text = "得分：" + GameManager.gameManager.score.ToString("00000");
+        score.GetComponent<Text>().text = "得分：" + GameManager.gameManager.score.ToString("000000");
         if(GameManager.gameManager.score >= GameManager.gameManager.order[0])
         {
             StartCoroutine(showtip());

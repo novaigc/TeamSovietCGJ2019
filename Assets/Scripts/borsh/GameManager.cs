@@ -22,7 +22,7 @@ public class GameManager {
     public float movespeed = 1f;
     public bool iseattriangle = false;
     public int[] order = new int[5];
-    public string[] name = new string[5] { "aaa", "aaa", "aaa" , "aaa" , "aaa" };
+    public string[] name = new string[5] { "AAA", "AAA", "AAA", "AAA", "AAA" };
 
 
     public int waves = 0;
@@ -86,7 +86,7 @@ public class GameManager {
         for (int i = 0; i < 5; i++)
         {
             PlayerPrefs.SetInt("order" + i.ToString(), 0);
-            PlayerPrefs.SetString("name" + i.ToString(), "aaa");
+            PlayerPrefs.SetString("name" + i.ToString(), "AAA");
         }
     }
     public AsyncOperation loadscene(string name)
