@@ -32,10 +32,18 @@ public class SpawnerManager : MonoBehaviour
 
     void Start()
     {
+        Init();
         StartCoroutine(RandomOpen());
         StartCoroutine(ChangeSpeed());
     }
 
+    public void Init()
+    {
+        gameLevel = 1;
+        spawnerCount = 6;
+        GameManager.gameManager.movespeed = 1.5f;
+        GameManager.gameManager.baseScore = 55;
+    }
 
     void Update()
     {
@@ -88,7 +96,7 @@ public class SpawnerManager : MonoBehaviour
         {
             gameLevel = 2;
             spawnerCount = 10;
-            delay = 1.2f;
+            delay = 1f;
             GameManager.gameManager.movespeed = 2.5f;
             GameManager.gameManager.baseScore = 112;
         }
@@ -97,7 +105,7 @@ public class SpawnerManager : MonoBehaviour
         {
             gameLevel = 3;
             spawnerCount = 12;
-            delay = 1f;
+            delay = 0.8f;
             GameManager.gameManager.movespeed = 3.5f;
             GameManager.gameManager.baseScore = 225;
         }

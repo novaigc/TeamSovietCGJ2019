@@ -14,8 +14,8 @@ public class TitleManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponents<AudioSource>();
-        audioSource[0].clip = Resources.Load(@"Audios\TITLE1") as AudioClip;
-        audioSource[0].loop = false;
+        audioSource[0].clip = Resources.Load(@"Audios\TITLE") as AudioClip;
+        audioSource[0].loop = true;
         audioSource[0].Play();
         //Debug.Log(audioSource[0].clip);
         presskey = GameObject.Find("press any key");
@@ -32,13 +32,13 @@ public class TitleManager : MonoBehaviour
         }
         //GameStart();
         //pressanykey();
-        if(!audioSource[0].isPlaying&&isplayed==false)
-        {
-            audioSource[0].clip= Resources.Load(@"Audios\TITLE2") as AudioClip;
-            audioSource[0].loop = true;
-            audioSource[0].Play();
-            isplayed = true;
-        }
+        //if(!audioSource[0].isPlaying&&isplayed==false)
+        //{
+        //    audioSource[0].clip= Resources.Load(@"Audios\TITLE2") as AudioClip;
+        //    audioSource[0].loop = true;
+        //    audioSource[0].Play();
+        //    isplayed = true;
+        //}
     }
     void pressanykey()
     {

@@ -18,8 +18,10 @@ public class EndManager : MonoBehaviour
         GameManager.gameManager.loadorder();
         for (int i=1;i<=5;i++)
         {
-            GameObject.Find("order" + i.ToString()).GetComponent<Text>().text = GameManager.gameManager.order[i - 1].ToString("00000");
+            GameObject.Find("order" + i.ToString()).GetComponent<Text>().text = GameManager.gameManager.order[i - 1].ToString("00000");     
         }
+
+        
         score = GameObject.Find("score");
         score.GetComponent<Text>().text = "得分：" + GameManager.gameManager.score.ToString("00000");
         if(GameManager.gameManager.score >= GameManager.gameManager.order[0])
@@ -49,4 +51,6 @@ public class EndManager : MonoBehaviour
         tip.SetActive(true);
         tip.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 1f);
     }
+
+
 }

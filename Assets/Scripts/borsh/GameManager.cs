@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
+using System.Linq;
 
 public class GameManager { 
     private static GameManager gamemanager;
@@ -23,14 +24,13 @@ public class GameManager {
     public int[] order = new int[10];
 
 
-
-
     public int waves = 0;
     public int score = 0;
     public int baseScore = 55;
     public List<GameObject> hearts = new List<GameObject>();
     public int baseMount = 20;
     public bool isEnd = false;
+
 
     public void placeorder(int score)
     {

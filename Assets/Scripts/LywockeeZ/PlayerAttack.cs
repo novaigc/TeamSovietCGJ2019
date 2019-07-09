@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
 
     public Animator animator;
     public Transform attackPos;
-    public float attackRange;
+    public Vector2 attackRange = Vector2.zero;
     private MovementController movement;
     private Collider2D[] thingsToAttack;
 
@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        thingsToAttack = Physics2D.OverlapCircleAll(attackPos.position, attackRange, 1 << LayerMask.NameToLayer("heart"));
+        thingsToAttack = Physics2D.OverlapCapsuleAll(attackPos.position, attackRange, CapsuleDirection2D.Vertical , 0f , 1 << LayerMask.NameToLayer("heart"));//.OverlapCircleAll(attackPos.position, attackRange, 1 << LayerMask.NameToLayer("heart"));
         if (timeBtwAttack <= 0)
         {
             if (Input.GetKeyDown(KeyCode.J ) && PlayerStats.Instance.isDeath == false)
@@ -66,13 +66,14 @@ public class PlayerAttack : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        Gizmos.DrawWireCube(attackPos.position, attackRange);
+        //Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
     IEnumerator StartCutting()
     {
         movement.isCutting = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         movement.isCutting = false;
     }
     IEnumerator distroyheart(Collider2D heart)
@@ -84,7 +85,11 @@ public class PlayerAttack : MonoBehaviour
         //heart.transform.GetComponent<Heart>().brust.Play();
         AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\hit") as AudioClip, new Vector3(0, 0, 0));        
         yield return new WaitForSeconds(0.5f);
-        Destroy(heart.transform.parent.gameObject);
+        //防止报错
+        if (heart.transform.parent.gameObject != null)
+        {
+            Destroy(heart.transform.parent.gameObject);
+        } 
         GameManager.gameManager.score += GameManager.gameManager.baseScore;
     }
 }

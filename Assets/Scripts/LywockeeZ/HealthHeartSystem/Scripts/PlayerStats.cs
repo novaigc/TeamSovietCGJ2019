@@ -89,11 +89,12 @@ public class PlayerStats : MonoBehaviour
     }
     IEnumerator die()
     {
+        SpawnerManager.Instance.StopAllCoroutines();
         GameObject.Find("Canvasone").GetComponent<AudioSource>().Stop();
         isDeath = true;
         animator.SetTrigger("Death");
         AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\fall") as AudioClip, new Vector3(0, 0, 0));
-        animator.transform.parent.GetComponent<BoxCollider2D>().enabled = false;
+        animator.transform.parent.GetComponent<CapsuleCollider2D>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         AudioSource.PlayClipAtPoint(Resources.Load(@"Audios\SFX\Death") as AudioClip, new Vector3(0, 0, 0));
         StartCoroutine(CameraMove());

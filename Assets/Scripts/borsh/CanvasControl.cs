@@ -13,7 +13,25 @@ public class CanvasControl : MonoBehaviour
     private GameObject combine;
     private GameObject panel;
 
-   // private GameObject waveamount;
+    protected static CanvasControl _instance;
+    public static CanvasControl Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<CanvasControl>();
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject();
+                    _instance = obj.AddComponent<CanvasControl>();
+                }
+            }
+            return _instance;
+        }
+    }
+
+    // private GameObject waveamount;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +82,8 @@ public class CanvasControl : MonoBehaviour
         yield return new WaitForSeconds(2f);
         intro.GetComponent<Image>().DOFade(0, 1f);
         panel.GetComponent<Image>().DOFade(0, 1f);
+        yield return new WaitForSeconds(1f);
+        panel.SetActive(false);
     }
     public void showcombine()
     {
@@ -71,9 +91,10 @@ public class CanvasControl : MonoBehaviour
         {
             combine.SetActive(true);
             combine.GetComponent<Text>().text = "连击 " + combineamount.ToString();
-            Tweener tw = combine.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(0.5f, 0.5f, 0.5f), 0.2f);
+            GameManager.gameManager.score += combineamount * 7;
+            Tweener tw = combine.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(0.5f, 0.5f, 0.5f), 0.1f);
             tw.SetEase(Ease.OutExpo);
-            tw.OnComplete(delegate { combine.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 0.25f); });
+            tw.OnComplete(delegate { combine.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 0.2f); });
         }
         else
             combine.SetActive(false);
