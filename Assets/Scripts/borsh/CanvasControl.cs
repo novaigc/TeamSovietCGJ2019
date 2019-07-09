@@ -118,7 +118,7 @@ public class CanvasControl : MonoBehaviour
         if (ifshow<5)
         {
             input.SetActive(true);            
-            Tweener tw= input.GetComponent<RectTransform>().DOLocalMoveY(-119, 2f);
+            Tweener tw= input.GetComponent<RectTransform>().DOLocalMoveY(-330, 2f);
             tw.OnComplete(delegate { caninput = true; });
         }
         else
