@@ -85,7 +85,8 @@ public class PlayerStats : MonoBehaviour
         yield return new WaitForSeconds(1f);
         CameraController.Instance.startMove = true;
         yield return new WaitForSeconds(4f);
-        GameManager.gameManager.endgame();
+        //GameManager.gameManager.endgame();
+        CanvasControl.Instance.startinput();
     }
     IEnumerator die()
     {

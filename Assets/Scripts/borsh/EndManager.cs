@@ -16,12 +16,27 @@ public class EndManager : MonoBehaviour
         //GameManager.gameManager.zeroorder();
         tip = transform.Find("tip").gameObject;     
         GameManager.gameManager.loadorder();
+        GameManager.gameManager.loadname();
         for (int i=1;i<=5;i++)
         {
             GameObject.Find("order" + i.ToString()).GetComponent<Text>().text = GameManager.gameManager.order[i - 1].ToString("00000");     
         }
+        for (int i = 1; i <= 5; i++)
+        {
+            GameObject.Find("name" + i.ToString()).GetComponent<Text>().text = GameManager.gameManager.name[i - 1];
+        }
+        for (int i = 1; i <= 5; i++)
+        {
+            if (GameObject.Find("name" + i.ToString()).GetComponent<Text>().text == GameManager.gameManager.curname)
+                if (GameObject.Find("order" + i.ToString()).GetComponent<Text>().text == GameManager.gameManager.score.ToString("00000"))
+                {
+                    GameObject.Find("name" + i.ToString()).GetComponent<Text>().color = Color.yellow;
+                    GameObject.Find("order" + i.ToString()).GetComponent<Text>().color = Color.yellow;
+                    break;
+                }
+        }
 
-        
+
         score = GameObject.Find("score");
         score.GetComponent<Text>().text = "得分：" + GameManager.gameManager.score.ToString("00000");
         if(GameManager.gameManager.score >= GameManager.gameManager.order[0])
@@ -49,7 +64,13 @@ public class EndManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         tip.SetActive(true);
-        tip.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 1f);
+        while (true)
+        {
+            tip.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(-0.5f, -0.5f, -0.5f), 1f);
+            yield return new WaitForSeconds(1f);
+            tip.GetComponent<RectTransform>().DOBlendableScaleBy(new Vector3(0.5f, 0.5f, 0.5f), 1f);
+            yield return new WaitForSeconds(1f);
+        }
     }
 
 

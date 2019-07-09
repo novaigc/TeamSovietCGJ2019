@@ -12,6 +12,9 @@ public class CanvasControl : MonoBehaviour
     public int combineamount;
     private GameObject combine;
     private GameObject panel;
+    private GameObject input;
+    private bool caninput;
+    private int ifshow;
 
     protected static CanvasControl _instance;
     public static CanvasControl Instance
@@ -35,6 +38,9 @@ public class CanvasControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ifshow = 5;
+        input = GameObject.Find("InputCanvas").transform.Find("Input").gameObject;
+        caninput = false;
         panel = transform.Find("Panel").gameObject;
         combineamount = 0;
         combine= transform.Find("combine").gameObject;
@@ -51,6 +57,12 @@ public class CanvasControl : MonoBehaviour
     {
         scoreup();
         //showwave();
+        if (caninput)
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                GameManager.gameManager.curname = input.GetComponent<InputField>().text;
+                GameManager.gameManager.endgame(ifshow );
+            }
     }
     public void nextwave()
     {
@@ -98,5 +110,18 @@ public class CanvasControl : MonoBehaviour
         }
         else
             combine.SetActive(false);
+    }
+    public void startinput()
+    {
+        GameManager.gameManager.loadorder();
+        ifshow = GameManager.gameManager.placeorder(GameManager.gameManager.score);
+        if (ifshow<5)
+        {
+            input.SetActive(true);
+            caninput = true;
+            input.GetComponent<RectTransform>().DOLocalMoveY(36, 2f);
+        }
+        else
+            GameManager.gameManager.endgame(ifshow);
     }
 }

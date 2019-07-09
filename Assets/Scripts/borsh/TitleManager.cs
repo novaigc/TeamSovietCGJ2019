@@ -31,7 +31,7 @@ public class TitleManager : MonoBehaviour
             start();
         }
         //GameStart();
-        //pressanykey();
+        pressanykey();
         //if(!audioSource[0].isPlaying&&isplayed==false)
         //{
         //    audioSource[0].clip= Resources.Load(@"Audios\TITLE2") as AudioClip;
@@ -61,8 +61,9 @@ public class TitleManager : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            SceneChanger.Instance.FadeToNextScene();
-            GameManager.gameManager.isEnd = false;
+            //SceneChanger.Instance.FadeToNextScene();
+            // GameManager.gameManager.isEnd = false;
+            StartCoroutine(startgame());
         }
     }
     public void start()
