@@ -21,7 +21,7 @@ public class EndManager : MonoBehaviour
         tip = transform.Find("tip").gameObject;
         presskey = GameObject.Find("PRESS RESTART");
         keyisfade = false;
-        fadespeed = 1.5f;
+        fadespeed = 1.0f;
         GameManager.gameManager.loadorder();
         GameManager.gameManager.loadname();
         for (int i=1;i<=5;i++)
