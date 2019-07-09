@@ -30,7 +30,9 @@ Unity2019.1.8f1
 
 ## 平台
 
-Windows
+**Windows**
+
+**MacOS**
 
 ## 项目地址
 
