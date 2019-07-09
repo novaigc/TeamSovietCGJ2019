@@ -40,7 +40,7 @@ public class EndManager : MonoBehaviour
     {
         GameManager.gameManager.score = 0;
         GameManager.gameManager.edgeonly = 0.1f;
-        SceneChanger.Instance.FadeToScene(1);
+        SceneChanger.Instance.FadeToScene(0);
         GameManager.gameManager.isEnd = false;
     }
     IEnumerator showtip()
