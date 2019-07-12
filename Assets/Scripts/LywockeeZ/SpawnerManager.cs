@@ -40,7 +40,7 @@ public class SpawnerManager : MonoBehaviour
     public void Init()
     {
         gameLevel = 1;
-        spawnerCount = 6;
+        spawnerCount = 4;
         GameManager.gameManager.movespeed = 1.5f;
         GameManager.gameManager.baseScore = 55;
     }
@@ -110,12 +110,21 @@ public class SpawnerManager : MonoBehaviour
             GameManager.gameManager.baseScore = 225;
         }
 
-        if (increaseSpeed >= 4.5)
+        if (increaseSpeed >= 4.5 && increaseSpeed < 7)
         {
             gameLevel = 4;
             spawnerCount = 16;
             delay = 0.5f;
             GameManager.gameManager.movespeed = 4.5f;
+            GameManager.gameManager.baseScore = 405;
+        }
+
+        if (increaseSpeed >= 7)
+        {
+            gameLevel = 5;
+            spawnerCount = 16;
+            delay = 0.5f;
+            GameManager.gameManager.movespeed = 5.5f;
             GameManager.gameManager.baseScore = 405;
         }
     }
